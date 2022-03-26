@@ -1,0 +1,42 @@
+{
+    "id": "revisionCotizacion",
+    "schemaVersion": "1.1.0",
+    "name": "revisionCotizacion",
+    "revision": "1.0",
+    "type": "task",
+    "readOnly": false,
+    "content": [
+        {
+            "id": "marca",
+            "type": "string",
+            "label": "Marca",
+            "readOnly": false,
+            "value": "${context.solicitud.cotizacion.marca}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "modelo",
+            "type": "string",
+            "label": "Modelo",
+            "readOnly": false,
+            "value": "${context.solicitud.cotizacion.modelo}",
+            "constraints": {
+                "required": false
+            }
+        }
+    ],
+    "decisions": [
+        {
+            "id": "generar_cotizaci_n",
+            "text": "Generar cotización",
+            "decisionType": "positive"
+        },
+        {
+            "id": "rechazar_solicitud",
+            "text": "Rechazar solicitud",
+            "decisionType": "negative"
+        }
+    ]
+}

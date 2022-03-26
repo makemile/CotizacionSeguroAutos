@@ -1,0 +1,101 @@
+{
+    "id": "solicitudcotizacion",
+    "schemaVersion": "1.1.0",
+    "name": "solicitudcotizacion",
+    "revision": "1.0",
+    "type": "task",
+    "readOnly": false,
+    "content": [
+        {
+            "id": "datos_del_auto",
+            "type": "section",
+            "title": "Datos Usuario",
+            "content": [
+                {
+                    "id": "solicitante",
+                    "type": "string",
+                    "label": "Solicitante",
+                    "readOnly": false,
+                    "value": "${context.solicitud.cotizacion.solicitante}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "edad",
+                    "type": "string",
+                    "label": "Edad",
+                    "readOnly": false,
+                    "value": "${context.solicitud.cotizacion.edad}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "direccion",
+                    "type": "string",
+                    "label": "Direccion",
+                    "readOnly": false,
+                    "value": "${context.solicitud.cotizacion.direccion}",
+                    "constraints": {
+                        "required": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": "datos_del_auto_1",
+            "type": "section",
+            "title": "Datos del auto",
+            "content": [
+                {
+                    "id": "marca",
+                    "type": "string",
+                    "label": "Marca",
+                    "readOnly": false,
+                    "value": "${context.solicitud.cotizacion.marca}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "placa",
+                    "type": "string",
+                    "label": "Placa",
+                    "readOnly": false,
+                    "value": "${context.solicitud.cotizacion.placa}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "a_o",
+                    "type": "string",
+                    "label": "Año",
+                    "readOnly": false,
+                    "value": "${context.solicitud.cotizacion.año}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "puertas",
+                    "type": "string",
+                    "label": "Puertas",
+                    "readOnly": false,
+                    "value": "${context.solicitud.cotizacion.puertas}",
+                    "constraints": {
+                        "required": true
+                    }
+                }
+            ]
+        }
+    ],
+    "decisions": [
+        {
+            "id": "enviar_solicitud",
+            "text": "enviar solicitud",
+            "decisionType": "positive"
+        }
+    ]
+}
