@@ -7,6 +7,7 @@ modules:
   path: solicitud-module
   requires:
   - name: workflow
+
     parameters:
       content-target: true
 resources:
@@ -14,4 +15,5 @@ resources:
   type: org.cloudfoundry.managed-service
   parameters:
     service: workflow
+  
     service-plan: lite
