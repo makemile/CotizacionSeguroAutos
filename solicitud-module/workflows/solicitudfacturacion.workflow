@@ -22,9 +22,6 @@
 				"d156bb23-1925-4fe0-9f39-e2abfb878c48": {
 					"name": "aprobado"
 				},
-				"ea3903e1-7953-48f6-b254-d2f64e739932": {
-					"name": "RPA ingresa datos al form"
-				},
 				"ac2e9882-867a-4945-bd23-fd2b28dffd40": {
 					"name": "notificar solicitud recibida"
 				},
@@ -50,9 +47,6 @@
 			"sequenceFlows": {
 				"c6b99f32-5fe6-4ab6-b60a-80fba1b9ae0f": {
 					"name": "SequenceFlow1"
-				},
-				"1b122228-49c3-4130-837b-3745971088bf": {
-					"name": "SequenceFlow28"
 				},
 				"d3a94769-9ab3-4442-8540-92ac7d971f5d": {
 					"name": "SequenceFlow29"
@@ -114,25 +108,6 @@
 			"name": "aprobado",
 			"mailDefinitionRef": "9f15a806-79a7-4fa5-b536-2b2c8699122c"
 		},
-		"ea3903e1-7953-48f6-b254-d2f64e739932": {
-			"classDefinition": "com.sap.bpm.wfs.UserTask",
-			"subject": "RPA ingresa datos al form",
-			"priority": "MEDIUM",
-			"isHiddenInLogForParticipant": false,
-			"supportsForward": false,
-			"userInterface": "sapui5://comsapbpmworkflow.comsapbpmwusformplayer/com.sap.bpm.wus.form.player",
-			"recipientUsers": "mkengya@gmail.com",
-			"formReference": "/forms/solicitudfacturacion/solicitudcotizacion.form",
-			"userInterfaceParams": [{
-				"key": "formId",
-				"value": "solicitudcotizacion"
-			}, {
-				"key": "formRevision",
-				"value": "1.0"
-			}],
-			"id": "usertask8",
-			"name": "RPA ingresa datos al form"
-		},
 		"ac2e9882-867a-4945-bd23-fd2b28dffd40": {
 			"classDefinition": "com.sap.bpm.wfs.MailTask",
 			"id": "mailtask6",
@@ -146,11 +121,11 @@
 			"isHiddenInLogForParticipant": false,
 			"supportsForward": false,
 			"userInterface": "sapui5://comsapbpmworkflow.comsapbpmwusformplayer/com.sap.bpm.wus.form.player",
-			"recipientUsers": "mkengya@gmail.com",
-			"formReference": "/forms/solicitudfacturacion/revisionCotizacion.form",
+			"recipientUsers": "milcaph.19@gmail.com",
+			"formReference": "/forms/solicitudfacturacion/solicitudcotizacion.form",
 			"userInterfaceParams": [{
 				"key": "formId",
-				"value": "revisionCotizacion"
+				"value": "solicitudcotizacion"
 			}, {
 				"key": "formRevision",
 				"value": "1.0"
@@ -194,13 +169,6 @@
 			"id": "sequenceflow1",
 			"name": "SequenceFlow1",
 			"sourceRef": "11a9b5ee-17c0-4159-9bbf-454dcfdcd5c3",
-			"targetRef": "ea3903e1-7953-48f6-b254-d2f64e739932"
-		},
-		"1b122228-49c3-4130-837b-3745971088bf": {
-			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"id": "sequenceflow28",
-			"name": "SequenceFlow28",
-			"sourceRef": "ea3903e1-7953-48f6-b254-d2f64e739932",
 			"targetRef": "ac2e9882-867a-4945-bd23-fd2b28dffd40"
 		},
 		"d3a94769-9ab3-4442-8540-92ac7d971f5d": {
@@ -226,7 +194,7 @@
 		},
 		"b02a7dd5-3e1d-4ac2-b364-05c96139c197": {
 			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"condition": "${usertasks.usertask10.last.decision == \"generar_cotizaci_n\"}",
+			"condition": "${usertasks.usertask10.last.decision == \"aprobar_solicitud\"}",
 			"id": "sequenceflow34",
 			"name": "si",
 			"sourceRef": "8464a312-3bd5-4d38-8ac4-394ad1513134",
@@ -241,7 +209,7 @@
 		},
 		"da71043a-73f9-464a-aca0-ac1d862888f7": {
 			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"condition": "${context.solicitud.autorizacion.autorizado == \"true\"}",
+			"condition": "${context.solicitud.envioCotizacionAutomatico == \"true\"}",
 			"id": "sequenceflow37",
 			"name": "si",
 			"sourceRef": "acc5d2a3-e990-4860-8fb5-05aeb5a4ba9b",
@@ -290,8 +258,6 @@
 				"6bb141da-d485-4317-93b8-e17711df4c32": {},
 				"8138e5d8-248d-4ccd-b258-b7104427bd14": {},
 				"0b2a4254-7151-493b-a9cd-8ddec24a91f3": {},
-				"df15f608-6710-4f01-9942-1489c86bb9d7": {},
-				"3871d96b-8c52-4788-96df-457e825a4973": {},
 				"cd079e08-e518-4ce1-ac0b-a17ed5aae8ab": {},
 				"953e8d5b-e400-4a1f-a915-b2ad658ddff4": {},
 				"2345e2bb-8b4f-491c-bc80-becdd30702d3": {},
@@ -314,7 +280,7 @@
 		},
 		"df898b52-91e1-4778-baad-2ad9a261d30e": {
 			"classDefinition": "com.sap.bpm.wfs.ui.StartEventSymbol",
-			"x": -99,
+			"x": 19,
 			"y": 25,
 			"width": 32,
 			"height": 32,
@@ -330,9 +296,9 @@
 		},
 		"6bb141da-d485-4317-93b8-e17711df4c32": {
 			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "-83,44.5 15,44.5",
+			"points": "35,44.5 132,44.5",
 			"sourceSymbol": "df898b52-91e1-4778-baad-2ad9a261d30e",
-			"targetSymbol": "df15f608-6710-4f01-9942-1489c86bb9d7",
+			"targetSymbol": "cd079e08-e518-4ce1-ac0b-a17ed5aae8ab",
 			"object": "c6b99f32-5fe6-4ab6-b60a-80fba1b9ae0f"
 		},
 		"8138e5d8-248d-4ccd-b258-b7104427bd14": {
@@ -348,21 +314,6 @@
 			"width": 100,
 			"height": 60,
 			"object": "d156bb23-1925-4fe0-9f39-e2abfb878c48"
-		},
-		"df15f608-6710-4f01-9942-1489c86bb9d7": {
-			"classDefinition": "com.sap.bpm.wfs.ui.UserTaskSymbol",
-			"x": -35,
-			"y": 18,
-			"width": 100,
-			"height": 60,
-			"object": "ea3903e1-7953-48f6-b254-d2f64e739932"
-		},
-		"3871d96b-8c52-4788-96df-457e825a4973": {
-			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "15,48 132,48",
-			"sourceSymbol": "df15f608-6710-4f01-9942-1489c86bb9d7",
-			"targetSymbol": "cd079e08-e518-4ce1-ac0b-a17ed5aae8ab",
-			"object": "1b122228-49c3-4130-837b-3745971088bf"
 		},
 		"cd079e08-e518-4ce1-ac0b-a17ed5aae8ab": {
 			"classDefinition": "com.sap.bpm.wfs.ui.MailTaskSymbol",
@@ -381,7 +332,7 @@
 		},
 		"2345e2bb-8b4f-491c-bc80-becdd30702d3": {
 			"classDefinition": "com.sap.bpm.wfs.ui.UserTaskSymbol",
-			"x": 413,
+			"x": 457,
 			"y": 18,
 			"width": 100,
 			"height": 60,
@@ -395,7 +346,7 @@
 		},
 		"2720e9f4-692b-43de-84f0-8104704b16f4": {
 			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "463,47 610,47",
+			"points": "507,47 610,47",
 			"sourceSymbol": "2345e2bb-8b4f-491c-bc80-becdd30702d3",
 			"targetSymbol": "7cf9f740-a6ea-4516-b797-5b5a8640909b",
 			"object": "52bb2956-be1b-4990-be88-ed9d2c9b1c81"
@@ -460,7 +411,7 @@
 		},
 		"2024dc99-c7e9-469e-b506-c9ef245ed2f3": {
 			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "354,47 463,47",
+			"points": "354,47 507,47",
 			"sourceSymbol": "8138e5d8-248d-4ccd-b258-b7104427bd14",
 			"targetSymbol": "2345e2bb-8b4f-491c-bc80-becdd30702d3",
 			"object": "ab00ac6f-3a83-4409-a178-a6d926ae1ca3"
@@ -510,7 +461,7 @@
 		"77713475-6882-4b01-85d1-e4ede3c68a61": {
 			"classDefinition": "com.sap.bpm.wfs.MailDefinition",
 			"name": "maildefinition1",
-			"to": "anavis225@gmail.com",
+			"to": "milcaph.19@gmail.com",
 			"cc": "mkengya@gmail.com",
 			"subject": "Solicitud de cotización crédito automotriz",
 			"reference": "/webcontent/solicitudfacturacion/SolicitudRecibida.html",
@@ -519,7 +470,7 @@
 		"9f15a806-79a7-4fa5-b536-2b2c8699122c": {
 			"classDefinition": "com.sap.bpm.wfs.MailDefinition",
 			"name": "maildefinition2",
-			"to": "anavis225@gmail.com",
+			"to": "milcaph.19@gmail.com",
 			"cc": "mkengya@gmail.com",
 			"subject": "Solicitud de cotización enviada",
 			"text": "Solicitud de cotización enviada",
@@ -528,7 +479,7 @@
 		"6c4290e4-6d49-4189-b578-b71a90f3aed6": {
 			"classDefinition": "com.sap.bpm.wfs.MailDefinition",
 			"name": "maildefinition3",
-			"to": "anavis225@gmail.com",
+			"to": "milcaph.19@gmail.com",
 			"subject": "Solicitud rechazada",
 			"text": "Su solicitud ha sido rechazada",
 			"id": "maildefinition3"
@@ -536,7 +487,7 @@
 		"bdea084a-6c7c-4772-9945-30677cf3e393": {
 			"classDefinition": "com.sap.bpm.wfs.MailDefinition",
 			"name": "maildefinition4",
-			"to": "anavis225@gmail.com",
+			"to": "milcaph.19@gmail.com",
 			"cc": "mkengya@gmail.com",
 			"subject": "Envío de cotización ",
 			"text": "Envío de cotización ",

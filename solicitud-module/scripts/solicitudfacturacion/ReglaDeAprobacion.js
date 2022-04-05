@@ -1,9 +1,9 @@
 var marca = $.context.solicitud.cotizacion.marca;
 
-if(marca == "Toyota" || marca == "Mitsubishi" || marca == "Ferrari") {
-    $.context.solicitud.autorizacion.autorizado = "false";
+if(marca == "Lexus" || marca == "Audi" || marca == "Ferrari") {
+    $.context.solicitud.envioCotizacionAutomatico = "false";
 } else {
-    $.context.solicitud.autorizacion.autorizado = "true";
+    $.context.solicitud.envioCotizacionAutomatico = "true";
 }
 
 
