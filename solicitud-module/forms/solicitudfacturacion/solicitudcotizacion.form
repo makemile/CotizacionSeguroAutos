@@ -23,7 +23,7 @@
                 },
                 {
                     "id": "edad",
-                    "type": "string",
+                    "type": "integer",
                     "label": "Edad",
                     "readOnly": false,
                     "value": "${context.solicitud.cotizacion.edad}",
@@ -70,7 +70,7 @@
                 },
                 {
                     "id": "a_o",
-                    "type": "string",
+                    "type": "integer",
                     "label": "Año",
                     "readOnly": false,
                     "value": "${context.solicitud.cotizacion.año}",
@@ -80,12 +80,22 @@
                 },
                 {
                     "id": "puertas",
-                    "type": "string",
+                    "type": "integer",
                     "label": "Puertas",
                     "readOnly": false,
                     "value": "${context.solicitud.cotizacion.puertas}",
                     "constraints": {
                         "required": true
+                    }
+                },
+                {
+                    "id": "precio",
+                    "type": "integer",
+                    "label": "Precio",
+                    "readOnly": false,
+                    "value": "${context.solicitud.cotizacion.precio}",
+                    "constraints": {
+                        "required": false
                     }
                 }
             ]
@@ -93,9 +103,14 @@
     ],
     "decisions": [
         {
-            "id": "enviar_solicitud",
-            "text": "enviar solicitud",
+            "id": "aprobar_solicitud",
+            "text": "aprobar solicitud",
             "decisionType": "positive"
+        },
+        {
+            "id": "rechazar_solicitud",
+            "text": "rechazar solicitud",
+            "decisionType": "negative"
         }
     ]
 }
