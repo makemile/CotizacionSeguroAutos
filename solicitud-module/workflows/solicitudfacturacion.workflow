@@ -275,6 +275,13 @@
 			"sourceRef": "87dca8f9-8632-4bbf-a0c5-2ee733159059",
 			"targetRef": "acc5d2a3-e990-4860-8fb5-05aeb5a4ba9b"
 		},
+		"5e35a13d-157b-4907-b26e-5ce85f3bb4cf": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow43",
+			"name": "SequenceFlow43",
+			"sourceRef": "4119ad5a-cc72-4668-be9b-92e2c4e9a8ba",
+			"targetRef": "ce816a60-9c92-4a9f-9a02-d101b2b2162d"
+		},
 		"42fa7a2d-c526-4a02-b3ba-49b5168ba644": {
 			"classDefinition": "com.sap.bpm.wfs.ui.Diagram",
 			"symbols": {
@@ -481,6 +488,13 @@
 			"height": 60,
 			"object": "4119ad5a-cc72-4668-be9b-92e2c4e9a8ba"
 		},
+		"ef112d86-1fa1-4560-b01c-2f5792220c68": {
+			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
+			"points": "719,48 879,48",
+			"sourceSymbol": "35389c33-4384-4aad-a798-bd5ec9f697c8",
+			"targetSymbol": "4d5771f5-528e-4848-af34-eaf9d933d14c",
+			"object": "5e35a13d-157b-4907-b26e-5ce85f3bb4cf"
+		},
 		"62d7f4ed-4063-4c44-af8b-39050bd44926": {
 			"classDefinition": "com.sap.bpm.wfs.LastIDs",
 			"maildefinition": 4,
@@ -499,7 +513,7 @@
 			"to": "anavis225@gmail.com",
 			"cc": "mkengya@gmail.com",
 			"subject": "Solicitud de cotización crédito automotriz",
-			"text": "Solicitud de cotización crédito automotriz",
+			"reference": "/webcontent/solicitudfacturacion/SolicitudRecibida.html",
 			"id": "maildefinition1"
 		},
 		"9f15a806-79a7-4fa5-b536-2b2c8699122c": {
@@ -518,20 +532,6 @@
 			"subject": "Solicitud rechazada",
 			"text": "Su solicitud ha sido rechazada",
 			"id": "maildefinition3"
-		},
-		"5e35a13d-157b-4907-b26e-5ce85f3bb4cf": {
-			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"id": "sequenceflow43",
-			"name": "SequenceFlow43",
-			"sourceRef": "4119ad5a-cc72-4668-be9b-92e2c4e9a8ba",
-			"targetRef": "ce816a60-9c92-4a9f-9a02-d101b2b2162d"
-		},
-		"ef112d86-1fa1-4560-b01c-2f5792220c68": {
-			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "719,48 879,48",
-			"sourceSymbol": "35389c33-4384-4aad-a798-bd5ec9f697c8",
-			"targetSymbol": "4d5771f5-528e-4848-af34-eaf9d933d14c",
-			"object": "5e35a13d-157b-4907-b26e-5ce85f3bb4cf"
 		},
 		"bdea084a-6c7c-4772-9945-30677cf3e393": {
 			"classDefinition": "com.sap.bpm.wfs.MailDefinition",
