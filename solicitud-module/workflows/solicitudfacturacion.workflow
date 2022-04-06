@@ -481,7 +481,7 @@
 			"name": "maildefinition3",
 			"to": "milcaph.19@gmail.com",
 			"subject": "Solicitud rechazada",
-			"text": "Su solicitud ha sido rechazada",
+			"reference": "/webcontent/solicitudfacturacion/SolicitudRechazada.html",
 			"id": "maildefinition3"
 		},
 		"bdea084a-6c7c-4772-9945-30677cf3e393": {
@@ -490,7 +490,7 @@
 			"to": "milcaph.19@gmail.com",
 			"cc": "mkengya@gmail.com",
 			"subject": "Envío de cotización ",
-			"text": "Envío de cotización ",
+			"reference": "/webcontent/solicitudfacturacion/solicitudEnviada.html",
 			"id": "maildefinition4"
 		}
 	}
