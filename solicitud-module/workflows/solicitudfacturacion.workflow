@@ -473,7 +473,7 @@
 			"to": "milcaph.19@gmail.com",
 			"cc": "mkengya@gmail.com",
 			"subject": "Solicitud de cotización enviada",
-			"text": "Solicitud de cotización enviada",
+			"reference": "/webcontent/solicitudfacturacion/ApprovedSolicitud.html",
 			"id": "maildefinition2"
 		},
 		"6c4290e4-6d49-4189-b578-b71a90f3aed6": {
